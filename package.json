@@ -1,0 +1,19 @@
+{
+  "name": "pgproject",
+  "version": "1.0.0",
+  "description": "Final Programming Gold Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MattSchaefer24/PGProject-.git"
+  },
+  "author": "Matthew Schaefer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MattSchaefer24/PGProject-/issues"
+  },
+  "homepage": "https://github.com/MattSchaefer24/PGProject-#readme"
+}
