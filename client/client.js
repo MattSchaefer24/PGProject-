@@ -24,7 +24,6 @@ button.addEventListener('click', async function(event){
     try{
         let response = await fetch(endpoint_url)
         let body = await response.text()
-        alert(body)
         document.getElementById('content').innerHTML = body
     }catch(e){
         alert(e)
