@@ -18,9 +18,9 @@ button.addEventListener('click', async function(event){
     }
 
     //This is going to combine all the input we need and send a request to the server
-    var endpoint = document.getElementById('input').value
-    var endpoint_url = 'http://127.0.0.1:8090/' + endpoint +'/' + media
-
+    var name = document.getElementById('input').value
+    var endpoint_url = 'http://127.0.0.1:8090/' + media +'/' + name
+    console.log(endpoint_url)
     try{
         let response = await fetch(endpoint_url)
         let body = await response.text()
