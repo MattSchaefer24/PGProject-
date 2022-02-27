@@ -4,6 +4,16 @@ var button = document.getElementById('submit')
 
 //Stores all the neccesary information when the submit button is clicked 
 
+
+try{
+
+    let response = await fetch(endpoint_url)
+    let body = await response.text()
+    document.getElementById('content').innerHTML = body
+}catch(e){
+    alert(e)
+}
+
 button.addEventListener('click', async function(event){
 
     //Next couple of line will keep track of which radio button is selected
