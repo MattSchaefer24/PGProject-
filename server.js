@@ -27,23 +27,26 @@ for(var keys in taylor){
 
 //Managing a get request 
 app.get('/:media/:name', function(req, resp){
+    lyrics = ''
     var media = req.params['media']
     var name = req.params['name'].toLowerCase()
     //If song is selected, need to verify that it is a Taylor Swift song 
     if(media == 'song'){
         var index = songs.indexOf(name)
         if(index == -1){
-            console.log('This is not a Swift song. ')
+            lryics = ""
+            resp.send('This is not a swift song,')
         }
         else{
             lyrics = ""
             for(var keys in taylor){
                 if(taylor[keys]['track_title'].toLowerCase() == name){
                     lyrics += taylor[keys]['lyric']
+                    lyrics += '\n'
                 }
             }
+            resp.send(lyrics)
         }
-        resp.send(lyrics)
     }
     
 })
