@@ -1,7 +1,7 @@
 //This is setting button to our submit button on our HTML page
 var button = document.getElementById('submit');
 //Stores all the neccesary information when the submit button is clicked
-window.addEventListener('click', async function(event){
+button.addEventListener('click', async function(event){
     //Next couple of line will keep track of which radio button is selected
     var media = "";
     if(document.getElementById('song').checked) {
