@@ -23,5 +23,8 @@
     "express": "^4.17.3",
     "node": "^17.4.0",
     "simple-hot-reload-server": "^1.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }

@@ -77,21 +77,30 @@
           </div>
         </div>
         <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-          <img class="rounded-lg-3"
           <!-- Image is from https://www.theplace2.ru/archive/taylor_swift/img/taylor-swift-in-vari(4).jpg -->
-          src="images/taylor1.jpeg" alt="" width="720" />
+          <img
+            class="rounded-lg-3"
+            src="images/taylor1.jpeg"
+            alt=""
+            width="720"
+          />
         </div>
       </div>
     </div>
-    <form id="form" action="">
-      <input type="" id="input" />
-      <input type="radio" id="song" />
-      <label for="html">Song</label><br />
-      <input type="radio" id="album" />
-      <label for="css">Album</label><br />
-      <input type="radio" id="lyric" />
-      <label for="javascript">Lyric</label>
-      <button type="button" id="submit">Submit</button>
+    <form id="form" method="post" action="http://127.0.0.1:8090/new">
+      <input name="about" />
+      <select
+        class="form-select"
+        name="picker"
+        aria-label="Default select example"
+        id="kk"
+      >
+        <option value="" selected>Media Type</option>
+        <option value="album">Album</option>
+        <option value="song">Song</option>
+        <option value="lyric">Lyric</option>
+      </select>
+      <input type="submit" />
     </form>
     <div id="content"></div>
     <script src="client.js"></script>

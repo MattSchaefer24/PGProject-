@@ -3,6 +3,11 @@ var express = require('express')
 var app = express()
 app.use(express.static('client'))
 
+
+app.use(express.static('client'));
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: false}));
+
 //Loading in our JSON data
 var taylor = require('./client/taylor_swift_lyrics.json')
 
@@ -27,6 +32,35 @@ for(var keys in taylor){
     lyrics.push(taylor[keys]['lyric'].toLowerCase())
 }
 
+
+//Action of the form gets sent to this request 
+app.post('/new', function(req, resp){
+    console.log("Got request")
+    var name = req.body.about.toLowerCase()
+    var media = req.body.picker
+
+    //If song is selected, need to verify that it is a Taylor Swift song 
+    if(media == 'song'){
+        var index = songs.indexOf(name)
+        if(index == -1){
+            song_lryics = ""
+            resp.send('This is not a swift song,')
+        }
+
+        //If the song is Taylor Swift then we want to fetch the lyrics 
+        else{
+            song_lyrics = ""
+            for(var keys in taylor){
+                if(taylor[keys]['track_title'].toLowerCase() == name){
+                    song_lyrics += taylor[keys]['lyric']
+                    song_lyrics += '\n'
+                }
+            }
+            resp.send(song_lyrics)
+        }
+    }
+
+})
 
 //Managing a get request 
 app.get('/:media/:name', function(req, resp){
@@ -95,4 +129,4 @@ app.get('/:media/:name', function(req, resp){
     }
 })
 
-app.listen(8090)
+app.listen(8090);
